@@ -4,9 +4,6 @@ import predicate.PredPlace;
 import reguli.Regula1;
 import reguli.Regula2;
 
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
-
 public class Main {
     public static void main(String[] args) {
         Elev elev = new Elev("Ion");
@@ -20,7 +17,5 @@ public class Main {
         Regula2 regula2 = new Regula2();
         InteresPred rezultatRegula2 = regula2.verificaRegula2(elev, materie, domeniu);
         System.out.println(rezultatRegula2);
-
-
     }
 }
