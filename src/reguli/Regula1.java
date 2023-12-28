@@ -6,13 +6,11 @@ import predicate.PredElev;
 import predicate.PredMateriePreferata;
 import predicate.PredPlace;
 
-import java.util.function.Predicate;
-
 public class Regula1 {
+    PredElev predElev = new PredElev();
+    PredMateriePreferata predMaterie = new PredMateriePreferata();
+    PredPlace predPlace = new PredPlace();
     public PredPlace verificaRegula1(Elev elev, Materie materiePreferata) {
-        PredElev predElev = new PredElev();
-        PredMateriePreferata predMaterie = new PredMateriePreferata();
-        PredPlace predPlace = new PredPlace();
 
         var predElevDaca = predElev.getPredicat();
 

@@ -7,7 +7,7 @@ public class Cariera {
         this.cariera = cariera;
     }
 
-    public String getDomeniu() {
+    public String getCariera() {
         return cariera;
     }
 
