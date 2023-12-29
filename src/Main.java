@@ -32,41 +32,45 @@ public class Main {
         if(rezultatRegula1!=null){
             Regula2 regula2 = new Regula2();
             InteresPred rezultatRegula2 = regula2.verificaRegula2(elev, materie, domeniu);
-        }
-        else{
-            System.out.println("Argumentele alese nu sunt potrivite pentru prima regula");
-        }
 
-        Regula3 regula3 = new Regula3();
-        Boolean rezultatRegula3 = regula3.verificaRegula3(elev, domeniu);
+            if(rezultatRegula2!=null) {
+                Regula3 regula3 = new Regula3();
+                Boolean rezultatRegula3 = regula3.verificaRegula3(elev, domeniu);
 
-        if(rezultatRegula3){
-            String regex = materieInput + " - " + domeniuInput + " - (.+)";
+                if(rezultatRegula3){
+                    String regex = materieInput + " - " + domeniuInput + " - (.+)";
 
-            byte[] continutBytes = new byte[0];
-            try {
-                continutBytes = Files.readAllBytes(Paths.get(caleFisier));
-                String continutString = new String(continutBytes);
+                    byte[] continutBytes = new byte[0];
+                    try {
+                        continutBytes = Files.readAllBytes(Paths.get(caleFisier));
+                        String continutString = new String(continutBytes);
 
-                Pattern pattern = Pattern.compile(regex);
-                Matcher matcher = pattern.matcher(continutString);
+                        Pattern pattern = Pattern.compile(regex);
+                        Matcher matcher = pattern.matcher(continutString);
 
-                if (matcher.find()) {
-                    String[] cuvinte = matcher.group().split("\\s*-\\s*");
-                    String carieraInput = cuvinte[2];
+                        if (matcher.find()) {
+                            String[] cuvinte = matcher.group().split("\\s*-\\s*");
+                            String carieraInput = cuvinte[2];
 
-                    Cariera cariera = new Cariera(carieraInput);
-                    CarieraPred carieraPred = new CarieraPred();
+                            Cariera cariera = new Cariera(carieraInput);
+                            CarieraPred carieraPred = new CarieraPred();
 
-                    System.out.println("Elevului "+ numeElev+ " i se potriveste o cariera de "+ cariera.getCariera().toLowerCase()+".");
-                } else {
-                    System.out.println("Nu s-a gasit nicio linie care să corespundă cu regex-ul.");
+                            System.out.println("Elevului "+ numeElev+ " i se potriveste o cariera de "+ cariera.getCariera().toLowerCase()+".");
+                        } else {
+                            System.out.println("Nu s-a gasit nicio linie care să corespundă cu regex-ul.");
+                        }
+
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
-
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            }
+            else{
+                System.out.println("Domeniul ales nu sunt potrivite,alege din nou");
             }
         }
-
+        else{
+            System.out.println("Materia aleasa nu se potriveste,aleg din nou");
+        }
     }
 }
