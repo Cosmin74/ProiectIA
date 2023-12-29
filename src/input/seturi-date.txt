@@ -1,0 +1,39 @@
+Arte plastice - Design - Designer grafic
+Arte plastice - Film - Regizor de film
+Arte plastice - Design de produs - Designer industrial
+Arte plastice - Publicitate - Director de artă publicitară
+Arte plastice - Restaurare culturală - Conservator de patrimoniu
+Biologie - Medicină - Biolog sau medic
+Biologie - Biotehnologie - Biotehnolog
+Biologie - Genomică - Geneticien
+Biologie - Ecologie - Ecologist
+Chimie - Farmacie - Farmacist
+Chimie - Industrie farmaceutică - Tehnician farmaceutic
+Chimie - Industrie alimentară - Tehnolog alimentar
+Economie - Finanțe - Analist financiar
+Economie - Consultanță - Consultant financiar
+Economie - Consultanță de afaceri - Consultant în strategii de afaceri
+Economie - Managementul resurselor umane - Specialist HR
+Fizică - Inginerie - Inginer mecanic
+Fizică - Energie - Inginer în energii regenerabile
+Fizică - Astronomie - Astronom
+Fizică - Inginerie aerospațială - Inginer aerospațial
+Geografie - Urbanism - Urbanist sau planificator urban
+Geografie - Conservare a mediului - Ecologist
+Geografie - Planificare urbană - Urbanist de planificare
+Geografie - Geoinformatică - Specialist GIS (Sisteme Informaționale Geografice)
+Informatică - Tehnologie - Dezvoltator de software
+Informatică - Securitate cibernetică - Specialist în securitate cibernetică
+Informatică - Inteligență artificială - Inginer de AI
+Informatică - Dezvoltare web - Dezvoltator web
+Informatică - Analiză de date - Analist de date sau Data Scientist
+Istorie - Muzeologie - Muzeograf
+Istorie - Arheologie - Arheolog
+Istorie - Restaurare culturală - Conservator de patrimoniu
+Limba engleză - Diplomație - Diplomat
+Limba franceză - Diplomatie - Diplomat
+Matematică - Cercetare - Matematician teoretic
+Matematică - Statistică - Statistician
+Matematică - Analiză financiară - Analist financiar
+Matematică - Finanțe - Analist financiar
+Matematică - Educație - Profesor de matematică

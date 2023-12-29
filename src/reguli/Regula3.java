@@ -12,14 +12,14 @@ public class Regula3 {
     InteresPred interesPred = new InteresPred();
     CarieraPred carieraPred = new CarieraPred();
 
-    public CarieraPred verificaRegula3(Elev elev, Domeniu domeniu) {
+    public Boolean verificaRegula3(Elev elev, Domeniu domeniu) {
 
         var interesPredDaca = interesPred.getPredicat(elev, domeniu);
 
         if (interesPredDaca.test(elev, domeniu)) {
-            return carieraPred;
+            return true;
         } else {
-            return null;
+            return false;
         }
 
     }
