@@ -9,10 +9,13 @@ import reguli.Regula1;
 import reguli.Regula2;
 import reguli.Regula3;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -27,29 +30,54 @@ public class Main extends JFrame {
     private JComboBox<String> materieComboBox;
     private JComboBox<String> domeniuComboBox;
     private JButton button;
-    private JTextField rezultatTextField;
+    private JTextArea  rezultatTextField;
 
     public Main() {
-        super("Interfață Swing");
+        super("Chestionar");
 
         Container container = getContentPane();
-        container.setLayout(new FlowLayout());
+        container.setLayout(new BorderLayout());
+
+        JLabel titleLabel = new JLabel("Chestionar pentru cariere", SwingConstants.CENTER);
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
+        container.add(titleLabel, BorderLayout.NORTH);
+
+        JPanel panel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(5, 5, 5, 5);
 
         numeElevField = new JTextField(15);
         materieComboBox = new JComboBox<>(new String[]{"Limba engleză", "Limba franceză", "Matematică", "Biologie", "Chimie", "Arte plastice", "Economie", "Fizică", "Geografie", "Informatică", "Istorie", });
         domeniuComboBox = new JComboBox<>();
         button = new JButton("Verifică cariera");
-        rezultatTextField = new JTextField(20);
+        rezultatTextField = new JTextArea(5, 35);
+        rezultatTextField.setEditable(false);
+        
 
-        container.add(new JLabel("Nume Elev:"));
-        container.add(numeElevField);
-        container.add(new JLabel("Materie:"));
-        container.add(materieComboBox);
-        container.add(new JLabel("Domeniu:"));
-        container.add(domeniuComboBox);
-        container.add(button);
-        container.add(new JLabel("Rezultat:"));
-        container.add(rezultatTextField);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        panel.add(new JLabel("Nume Elev:"), gbc);
+        gbc.gridx = 1;
+        panel.add(numeElevField, gbc);
+        gbc.gridy++;
+        gbc.gridx = 0;
+        panel.add(new JLabel("Materie:"), gbc);
+        gbc.gridx = 1;
+        panel.add(materieComboBox, gbc);
+        gbc.gridy++;
+        gbc.gridx = 0;
+        panel.add(new JLabel("Domeniu:"), gbc);
+        gbc.gridx = 1;
+        panel.add(domeniuComboBox, gbc);
+        gbc.gridy++;
+        gbc.gridx = 1;
+        panel.add(button, gbc);
+        gbc.gridy++;
+        gbc.gridx = 0;
+        panel.add(new JLabel("Rezultat:"), gbc);
+        gbc.gridx = 1;
+        panel.add(new JScrollPane(rezultatTextField), gbc);
+
 
         materieComboBox.addActionListener(new ActionListener() {
             @Override
@@ -123,7 +151,14 @@ public class Main extends JFrame {
 
         updateDomeniuComboBox();
 
+        add(panel);
         setSize(400, 250);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setVisible(true);
+
+
+        setSize(800, 650);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
